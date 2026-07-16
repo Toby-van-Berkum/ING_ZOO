@@ -1,14 +1,16 @@
 package com.ing.zoo;
 
-public class Lion {
-    public String name;
+import com.ing.zoo.animals.Animal.Animal;
+
+public class Lion extends Animal {
     public String helloText;
     public String eatText;
 
-    public Lion()
-    {
+    public Lion(String name) {
+        super(name);
     }
 
+    @Override
     public void sayHello()
     {
         helloText = "roooaoaaaaar";

@@ -1,6 +1,10 @@
 package com.ing.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import com.ing.zoo.animals.Animal.Animal;
 
 public class Zoo {
     public static void main(String[] args)
@@ -11,28 +15,31 @@ public class Zoo {
         commands[2] = "give meat";
         commands[3] = "perform trick";
 
-        Lion henk = new Lion();
-        henk.name = "henk";
-        Hippo elsa = new Hippo();
-        elsa.name = "elsa";
-        Pig dora = new Pig();
-        dora.name = "dora";
-        Tiger wally = new Tiger();
-        wally.name = "wally";
-        Zebra marty = new Zebra();
-        marty.name = "marty";
-
+        List<Animal> animals = new  ArrayList<>();
+        animals.add(new Lion("henk"));
+        animals.add(new Hippo("elsa"));
+        animals.add(new Pig("dora"));
+        animals.add(new Tiger("wally"));
+        animals.add(new Zebra("marty"));
+        
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
         if(input.equals(commands[0] + " henk"))
         {
-            henk.sayHello();
+            for(Animal animal : animals) 
+            {
+                if(animal.getName().equalsIgnoreCase("henk"))
+                {
+                    animal.sayHello();
+                }
+            }
         }
         else
         {
             System.out.println("Unknown command: " + input);
         }
+        scanner.close();
     }
 }

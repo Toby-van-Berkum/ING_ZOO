@@ -2,16 +2,20 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Zebra {
+import com.ing.zoo.animals.Animal.Animal;
+
+public class Zebra extends Animal {
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Zebra()
+    public Zebra(String name)
     {
+        super(name);
     }
 
+    @Override
     public void sayHello()
     {
         helloText = "zebra zebra";
