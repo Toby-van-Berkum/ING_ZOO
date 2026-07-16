@@ -1,10 +1,11 @@
 package com.ing.zoo.animals;
 
 import com.ing.zoo.animals.Animal.Animal;
+import com.ing.zoo.interfaces.Carnivore;
 
-public class Lion extends Animal {
-    public String helloText;
-    public String eatText;
+public class Lion extends Animal implements Carnivore{
+    private String helloText;
+    private String eatText;
 
     public Lion(String name) {
         super(name);
@@ -17,6 +18,7 @@ public class Lion extends Animal {
         System.out.println(helloText);
     }
 
+    @Override
     public void eatMeat()
     {
         eatText = "nomnomnom thx mate";

@@ -3,11 +3,13 @@ package com.ing.zoo.animals;
 import java.util.Random;
 
 import com.ing.zoo.animals.Animal.Animal;
+import com.ing.zoo.interfaces.Omnivore;
+import com.ing.zoo.interfaces.TrickAnimal;
 
-public class Pig extends Animal {
-    public String helloText;
-    public String eatText;
-    public String trick;
+public class Pig extends Animal implements Omnivore, TrickAnimal{
+    private String helloText;
+    private String eatText;
+    private String trick;
 
     public Pig(String name) {
         super(name);
@@ -20,18 +22,21 @@ public class Pig extends Animal {
         System.out.println(helloText);
     }
 
+    @Override
     public void eatLeaves()
     {
         eatText = "munch munch oink";
         System.out.println(eatText);
     }
 
+    @Override
     public void eatMeat()
     {
         eatText = "nomnomnom oink thx";
         System.out.println(eatText);
     }
 
+    @Override
     public void performTrick()
     {
         Random random = new Random();
