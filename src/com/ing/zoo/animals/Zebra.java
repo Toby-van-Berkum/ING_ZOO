@@ -27,4 +27,19 @@ public class Zebra extends Animal {
         eatText = "munch munch zank yee bra";
         System.out.println(eatText);
     }
+
+    public void performTrick()
+    {
+        Random random = new Random();
+        int rnd = random.nextInt(2);
+        if(rnd == 0)
+        {
+            trick = "snoozes standing up";
+        }
+        else
+        {
+            trick = "runs zigzag";
+        }
+        System.out.println(trick);
+    }
 }
