@@ -37,6 +37,8 @@ public class Zoo {
         animals.add(new Pig("dora"));
         animals.add(new Tiger("wally"));
         animals.add(new Zebra("marty"));
+        animals.add(new Ostrich("david"));
+        animals.add(new Crocodile("snappy"));
 
         return animals;
     }
